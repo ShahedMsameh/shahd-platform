@@ -1,15 +1,15 @@
 services:
-  # 1. الواجهة الأمامية (الموقع الأزرق الفخم)
+
   web:
     image: nginx:latest
     ports:
       - "8080:80"
     volumes:
-      - ./frontend:/usr/share/nginx/html:ro # ربط مجلدك المحلي بمجلد السيرفر
+      - ./frontend:/usr/share/nginx/html:ro
     networks:
       - shahd_network
 
-  # 2. قاعدة البيانات (المخزن الدائم)
+
   db:
     image: mysql:8.0
     restart: always
@@ -21,7 +21,7 @@ services:
     networks:
       - shahd_network
 
-  # 3. لوحة التحكم (phpMyAdmin)
+
   admin:
     image: phpmyadmin:latest
     ports:
@@ -31,7 +31,7 @@ services:
     networks:
       - shahd_network
 
-# تعريف الشبكة والذاكرة الدائمة
+
 networks:
   shahd_network:
 
