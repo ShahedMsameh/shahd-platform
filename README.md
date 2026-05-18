@@ -1,15 +1,27 @@
-# 🚀 Shahd Cloud Platform
+# Multi-Container Web Platform Deployment on AWS EC2
 
-Welcome to my cloud infrastructure laboratory. This project demonstrates a fully containerized environment.
+A professional Cloud & DevOps project demonstrating the deployment of a highly secure, multi-container web environment on AWS using Docker and Docker Compose. This project showcases modern system administration, network isolation, and container orchestration skills.
 
-## 🛠️ Technologies Used:
-* **Docker & Docker Compose:** For container orchestration.
-* **Nginx:** Serving the custom blue-themed frontend.
-* **MySQL:** Persistent database with Docker Volumes.
-* **phpMyAdmin:** Web interface for database management.
+## 🏗️ System Architecture & Infrastructure
 
-## ⚙️ How it works:
-All services are connected through an isolated internal Docker network (`shahd_network`) and deployed simultaneously using a single `docker-compose.yml` file.
+The project architecture is built with high isolation and security in mind:
+- **Cloud Infrastructure:** AWS EC2 Instance (Ubuntu Server) deployed in a secure VPC.
+- **Network Security:** AWS Security Groups configured with strict inbound rules (Restricted SSH & Port Management).
+- **Container Networking:** Isolated virtual bridge network (`shahd_network`) ensuring secure internal communication between services.
 
----
-*Built by Engineer Shahd* 👩‍💻
+## 🚀 Technologies Used
+- **Cloud:** AWS (EC2, VPC, Security Groups)
+- **Containerization:** Docker & Docker Compose
+- **Web Server:** Nginx (Latest)
+- **Database:** MySQL 8.0 (with persistent volume data storage)
+- **Database Management:** phpMyAdmin
+
+## 🛠️ Key Features Demonstrated
+- **Port Forwarding (NAT):** Mapping external host ports to internal container ports (`8080` for Web, `8081` for DB Management).
+- **Data Persistence:** Using Docker Volumes to ensure database logs and records remain secure even after container updates or server reboots.
+- **Service Restart Policies:** Implemented `restart: always` for critical infrastructure backup.
+
+## 💻 How to Deploy
+1. SSH into the AWS EC2 Instance:
+   ```bash
+   ssh -i your-key.pem ubuntu@your-ec2-ip
