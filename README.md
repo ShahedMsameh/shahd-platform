@@ -25,3 +25,6 @@ The project architecture is built with high isolation and security in mind:
 1. SSH into the AWS EC2 Instance:
    ```bash
    ssh -i your-key.pem ubuntu@your-ec2-ip
+### 📸 Live AWS Deployment
+<img width="1920" height="1020" alt="Screenshot 2026-05-19 093510" src="https://github.com/user-attachments/assets/6a3c7585-2512-43f4-b2dc-72317dbb359a" />
+
